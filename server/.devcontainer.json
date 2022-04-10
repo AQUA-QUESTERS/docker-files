@@ -1,0 +1,10 @@
+{
+    "name": "auth_server",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "shutdownAction": "none",
+    "service": "auth_server",
+    "workspaceFolder": "/root/workspace/servers/auth",
+    "forwardPorts": [ 1111 ],
+}
