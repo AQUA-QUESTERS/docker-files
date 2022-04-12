@@ -5,6 +5,6 @@
     ],
     "shutdownAction": "none",
     "service": "auth_server",
-    "workspaceFolder": "/root/servers/auth",
+    "workspaceFolder": "/root/servers/auth/",
     "forwardPorts": [ 1111 ],
 }

@@ -15,8 +15,8 @@ services:
       - MONGODB_CONNSTRING=mongodb://root:secret@mongodb # (experimental)
     volumes:
       - type: volume
-        source: sihv
-        target: /app/
+        source: sih_mobile_app
+        target: /root/app/
         volume:
           nocopy: true
       # - code:/root/workspace/app # TODO: change to your workspace
@@ -29,8 +29,8 @@ services:
       - 1111:1111
     volumes:
       - type: volume
-        source: sihv
-        target: /servers/auth
+        source: sih_server_auth
+        target: /root/servers/auth
         volume:
           nocopy: true
       # - code:/root/workspace/servers/auth
@@ -46,4 +46,7 @@ services:
     volumes:
       - "C:\\Users\\Public\\db:/data/db" # mount is in the local machine
 volumes:
-  sihv: 
+  sih_mobile_app:
+    name: sih_mobile_app
+  sih_server_auth:
+    name: sih_server_auth

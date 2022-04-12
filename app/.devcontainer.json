@@ -7,7 +7,7 @@
         "../docker-compose.yml"
     ],
     "service": "mobile_app",
-    "workspaceFolder": "/root/app",
+    "workspaceFolder": "/root/app/",
     "shutdownAction": "none",
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     "forwardPorts": [ 19000, 19001, 19002],
