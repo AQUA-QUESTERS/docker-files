@@ -1,6 +1,6 @@
 FROM node:16
 
-RUN mkdir -p /root/workspace/servers/auth /root/.vscode-server/extensions
+RUN mkdir -p /root/servers/auth /root/.vscode-server/extensions
 
 
 CMD /bin/sh -c "while sleep 172000; do :; done"

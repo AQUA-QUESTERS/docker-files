@@ -1,7 +1,7 @@
 FROM node:16
 
 # init for VS Code
-RUN mkdir -p /root/workspace /root/.vscode-server/extensions
+RUN mkdir -p /root/app/ /root/.vscode-server/extensions
 
 # Install eslint typescript expo
 RUN npm install -g npm@latest

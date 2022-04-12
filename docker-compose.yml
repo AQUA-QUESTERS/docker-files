@@ -14,7 +14,12 @@ services:
       - REACT_NATIVE_PACKAGER_HOSTNAME=172.20.10.2 # TODO: USE YOUR IPV4 address without any port
       - MONGODB_CONNSTRING=mongodb://root:secret@mongodb # (experimental)
     volumes:
-      - code:/root/workspace/app # TODO: change to your workspace
+      - type: volume
+        source: sihv
+        target: /app/
+        volume:
+          nocopy: true
+      # - code:/root/workspace/app # TODO: change to your workspace
   auth_server:
     container_name: auth_server
     build:
@@ -23,12 +28,17 @@ services:
     ports:
       - 1111:1111
     volumes:
-      - code:/root/workspace/servers/auth
+      - type: volume
+        source: sihv
+        target: /servers/auth
+        volume:
+          nocopy: true
+      # - code:/root/workspace/servers/auth
   mongodb:
     container_name: mongodb
     image: mongo
     ports:
-      - 27017:27017
+      - 27018:27017
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=secret
@@ -36,4 +46,4 @@ services:
     volumes:
       - "C:\\Users\\Public\\db:/data/db" # mount is in the local machine
 volumes:
-  code: {} 
+  sihv: 
