@@ -11,7 +11,7 @@ services:
     environment:
       - EXPO_DEVTOOLS_LISTEN_ADDRESS=0.0.0.0
       # - CHOKIDAR_USEPOLLING=true # Drains batterty, to be checked without usage, used for hot reload
-      - REACT_NATIVE_PACKAGER_HOSTNAME=172.20.10.2 # TODO: USE YOUR IPV4 address without any port
+      - REACT_NATIVE_PACKAGER_HOSTNAME=192.168.1.5 # TODO: USE YOUR IPV4 address without any port
       - MONGODB_CONNSTRING=mongodb://root:secret@mongodb # (experimental)
     volumes:
       - type: volume
@@ -44,9 +44,11 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=secret
       - MONGO_INITDB_DATABASE=db
     volumes:
-      - "C:\\Users\\Public\\db:/data/db" # mount is in the local machine
+      - sih_mongodbv:/data/db # mount is in the local machine
 volumes:
   sih_mobile_app:
     name: sih_mobile_app
   sih_server_auth:
     name: sih_server_auth
+  sih_mongodbv:
+    name: sih_mongodbv
