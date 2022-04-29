@@ -13,7 +13,7 @@ All the docker files relating to the product developed by this organization
  - After build, run  `docker compose up -d` to start the services in detached mode.
  - Then open defined services, i.e services which have their own designated devcontainer.json files, 
     - `devcontainer open app `
-    - `devcontainer open server` 
-
-
-
+    - `devcontainer open server`
+    - `devcontainer open flask1`
+    - `devcontainer open flask2` 
+ - Clone the respective respositories. 
