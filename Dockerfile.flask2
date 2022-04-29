@@ -1,0 +1,5 @@
+FROM tensorflow/tensorflow:latest-jupyter
+
+RUN python -m pip install --upgrade pip && python -m pip install flask
+
+CMD /bin/sh -c "while sleep 172000; do :; done"

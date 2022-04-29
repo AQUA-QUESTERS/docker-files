@@ -1,0 +1,10 @@
+{
+    "name": "sih_flask2",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "shutdownAction": "none",
+    "service": "sih_flask2",
+    "workspaceFolder": "/tf",
+    "forwardPorts": [ 8016 ],
+}

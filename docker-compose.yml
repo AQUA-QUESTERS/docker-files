@@ -11,7 +11,7 @@ services:
     environment:
       - EXPO_DEVTOOLS_LISTEN_ADDRESS=0.0.0.0
       # - CHOKIDAR_USEPOLLING=true # Drains batterty, to be checked without usage, used for hot reload
-      - REACT_NATIVE_PACKAGER_HOSTNAME=192.168.1.5 # TODO: USE YOUR IPV4 address without any port
+      - REACT_NATIVE_PACKAGER_HOSTNAME=192.168.1.12 # TODO: USE YOUR IPV4 address without any port
       - MONGODB_CONNSTRING=mongodb://root:secret@mongodb # (experimental)
     volumes:
       - type: volume
@@ -45,6 +45,24 @@ services:
       - MONGO_INITDB_DATABASE=db
     volumes:
       - sih_mongodbv:/data/db # mount is in the local machine
+  sih_flask1:
+    container_name: sih_flask1
+    build:
+      context: .
+      dockerfile: Dockerfile.flask1
+    ports:
+      - 8012:8012
+    volumes:
+      - sih_flask1:/tf
+  sih_flask2:
+    container_name: sih_flask2
+    build:
+      context: .
+      dockerfile: Dockerfile.flask2
+    ports:
+      - 8016:8016
+    volumes:
+      - sih_flask2:/tf
 volumes:
   sih_mobile_app:
     name: sih_mobile_app
@@ -52,3 +70,7 @@ volumes:
     name: sih_server_auth
   sih_mongodbv:
     name: sih_mongodbv
+  sih_flask1:
+    name: sih_flask1
+  sih_flask2:
+    name: sih_flask2
